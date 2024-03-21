@@ -54,7 +54,7 @@ public class ArcsinTest {
     }
 
     @Test
-    @DisplayName("check positive values close to 0")
+    @DisplayName("check random value")
     public void checkRandomValues() {
         double value = 0.1 * (random.nextInt(1000) - 50);
         Assertions.assertEquals(Math.asin(value), Arcsin.asin(value), epsilon);

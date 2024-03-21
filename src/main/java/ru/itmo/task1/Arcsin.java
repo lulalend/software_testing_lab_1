@@ -11,22 +11,22 @@ public class Arcsin {
         double x = Math.abs(value);
         double prev;
 
-        long kFact = 1;
-        long kFact2 = 1;
+        long factorialK = 1;
+        long gammaK = 1;
         int k = 0;
 
         while (true) {
             prev = sum;
             if (value > 0){
-                sum += (Math.pow(2, -k) * Math.pow(1 + x, k) * kFact2 / Math.pow(2, k)) / (kFact + 2 * k * kFact);
+                sum += (Math.pow(2, -k) * Math.pow(1 + x, k) * gammaK / Math.pow(2, k)) / (factorialK + 2 * k * factorialK);
             }
             else {
-                sum += (Math.pow(2, -k) * Math.pow(1 - x, k) * kFact2 / Math.pow(2, k)) / (kFact + 2 * k * kFact);
+                sum += (Math.pow(2, -k) * Math.pow(1 - x, k) * gammaK / Math.pow(2, k)) / (factorialK + 2 * k * factorialK);
             }
             
             k++;
-            kFact *= k;
-            kFact2 *= k + (k % 2 == 0 ? 1 : 0);
+            factorialK *= k;
+            gammaK *= k + (k % 2 == 0 ? 1 : 0);
 
             if (Math.abs(sum - prev) < epsilon) {
                 break;
