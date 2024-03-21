@@ -6,8 +6,12 @@ import ru.itmo.task3.StoryTeller;
 public class Main {
     public static void main(String[] args) {
 
-        StoryTeller we = new StoryTeller();
-        we.makeStory();
+        try {
+            StoryTeller we = new StoryTeller();
+            we.makeStory();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
 
 
     }

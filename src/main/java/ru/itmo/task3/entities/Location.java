@@ -12,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Location {
     private String name;
-//    тестами можно чекать пусто или нет после того как в неё ворвались
     private String purpose;
     private List<Sound> sounds;
 }

@@ -9,10 +9,12 @@ public class Door {
     private boolean isOpen;
 
     public void open() {
+        System.out.println("Дверь открылась!");
         isOpen = true;
     }
 
     public void close() {
+        System.out.println("Дверь закрылась!");
         isOpen = false;
     }
 }

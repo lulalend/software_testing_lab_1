@@ -37,7 +37,7 @@ public class GroupOfPeople {
                     System.out.print("ТИШИНА ");
                     break;
                 default:
-                    throw new RuntimeException(sound + ": Не найден");
+                    throw new RuntimeException("звук " + sound + " - Не найден");
             }
         }
         System.out.println();
@@ -48,11 +48,16 @@ public class GroupOfPeople {
     public void shakePeople(GroupOfPeople shakenGroup) {
         System.out.printf("%s растолкали %s\n", this.name, shakenGroup.name);
         for (Person person: shakenGroup.getPeople()) {
-            person.setCondition(Condition.SHAKEN);
+            if (person.getCondition() == Condition.STAND_BY_THE_DOOR)
+                person.setCondition(Condition.SHAKEN);
         }
     }
 
     public void breakInto(Location location) {
         System.out.printf("%s ворвались в %s\n", this.name, location.getName());
+
+        for (Person person: this.getPeople()) {
+            person.setLocation(location);
+        }
     }
 }
