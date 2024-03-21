@@ -34,7 +34,6 @@ public class Arcsin {
         }
 
         if (value > 0) {
-            // return sum;
             return (-1) * Math.PI / 2 + sum * Math.sqrt(2) * Math.sqrt(1 + x);
         }
         else {
