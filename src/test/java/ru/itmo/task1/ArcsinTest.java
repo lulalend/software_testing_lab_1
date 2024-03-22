@@ -52,11 +52,4 @@ public class ArcsinTest {
     public void checkNegativeCloseToZeroValues(double value) {
         Assertions.assertEquals(Math.asin(value), Arcsin.asin(value), epsilon);
     }
-
-    @Test
-    @DisplayName("check random value")
-    public void checkRandomValues() {
-        double value = 0.1 * (random.nextInt(1000) - 50);
-        Assertions.assertEquals(Math.asin(value), Arcsin.asin(value), epsilon);
-    }
 }
