@@ -52,4 +52,17 @@ public class ArcsinTest {
     public void checkNegativeCloseToZeroValues(double value) {
         Assertions.assertEquals(Math.asin(value), Arcsin.asin(value), epsilon);
     }
+
+    @Test
+    @DisplayName("check NaN value")
+    public void checkNanValue() {
+        Assertions.assertEquals(Math.asin(Double.NaN), Arcsin.asin(Double.NaN), epsilon);
+    }
+
+    @ParameterizedTest
+    @ValueSource(doubles = {-1.5, 2.5})
+    @DisplayName("check values out of range")
+    public void checkOutOfRangeValues(double value) {
+        Assertions.assertEquals(Math.asin(value), Arcsin.asin(value), epsilon);
+    }
 }
